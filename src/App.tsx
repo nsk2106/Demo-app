@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import  ButtonAppBar from './AppBar'
+import { MyForm } from "./MyForm";
+import { MyTable } from "./MyTable";
+const id = require ('short-id');
 
-function App() {
+
+
+const App = () => {
+  const [rows, setRows] = useState([
+    {
+      id: id.generate(),
+      firstName: "a",
+      lastName: "a",
+      email: "a@gmail.com"
+    }
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: "center" }}>
+      <ButtonAppBar />
+      <MyForm
+        onSubmit={data => {
+          setRows(currentRows => [
+            {
+          id: id.generate(),  ...data
+            }, ...currentRows
+          ]);
+        }}
+      />
+      <MyTable rows={rows} />
     </div>
   );
-}
+};
 
 export default App;
