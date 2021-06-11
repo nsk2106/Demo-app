@@ -1,3 +1,9 @@
+
+craeted table to add enteries into table using typescript and materail UI
+
+<img width="1280" alt="Screen Shot 2021-06-10 at 11 28 31 PM" src="https://user-images.githubusercontent.com/68337908/121720868-943d4e80-cab1-11eb-9c95-ccb9d03bcc2d.png">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
